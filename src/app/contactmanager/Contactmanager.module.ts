@@ -19,9 +19,8 @@ const routes: Routes = [
       {path: '', component: MainContentComponent}
     ]
   },
-
   {
-    path: '**', redirectTo: 'root'
+    path: '**', redirectTo: ''
   }
 ];
 
