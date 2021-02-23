@@ -19,7 +19,8 @@ users: Observable<User[]>;
     private userService: UserService) { }
 
   ngOnInit(): void {
-    this.breakpointObserver.observe([ `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`])
+    this.breakpointObserver
+      .observe([ `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`])
       .subscribe((state: BreakpointState) => {
         this.isScreenSmall = state.matches;
       });

@@ -7,24 +7,24 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private _users: BehaviorSubject<User[]>;
+  private 'users_': BehaviorSubject<User[]>;
   private dataStore: {
     users: User[]
   };
   constructor(private http: HttpClient) {
     this.dataStore = {users: []};
-    this._users = new BehaviorSubject<User[]>([]);
+    this.users_ = new BehaviorSubject<User[]>([]);
   }
 
   get users(): Observable<User[]>{
-    return this._users.asObservable();
+    return this.users_.asObservable();
   }
   loadAll() {
-    const usersUrl = 'https://angular-material-api.azurewebsites.net/users';
+    const usersUrl = 'https://angular-material-api.azurewebsites.net/users'
     return this.http.get<User[]>(usersUrl)
       .subscribe( data => {
         this.dataStore.users = data;
-        this._users.next(Object.assign({}, this.dataStore).users);
+        this.users_.next(Object.assign({}, this.dataStore).users);
         }, error => {
         console.log('Failes to fetsch users');
       });
