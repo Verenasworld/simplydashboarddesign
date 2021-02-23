@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
-const SMALL_WIDTH_BREAKPOINT = 720;
+const SMALL_WIDTH_BREAKPOINT = 1200;
 
 @Component({
   selector: 'app-sidenav',

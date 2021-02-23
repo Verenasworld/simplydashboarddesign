@@ -1,0 +1,18 @@
+$iconWidth: 56px;
+
+.sidenav-toggle{
+
+  display: none;
+  padding: 0;
+  margin: 8px;
+  min-width: $iconWidth;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: $iconWidth;
+    color: white;
+
+  }
+}
