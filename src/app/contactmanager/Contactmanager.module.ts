@@ -12,10 +12,14 @@ import {SidenavComponent} from './component/sidenav/sidenav.component';
 import {ContactmanagerAppComponent} from './contactmanager-app.component';
 import {Routes, RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {UserService} from './service/user.service';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
-    path: '', component: ContactmanagerAppComponent, children: [
+    path: '', component: ContactmanagerAppComponent,
+    children: [
+      {path: ':id', component: MainContentComponent},
       {path: '', component: MainContentComponent}
     ]
   },
@@ -37,7 +41,11 @@ const routes: Routes = [
       MaterialModule,
       FlexLayoutModule,
       FormsModule,
-      RouterModule.forChild(routes)
+      RouterModule.forChild(routes),
+      HttpClientModule
+  ],
+  providers: [
+    UserService
   ]
 })
 
