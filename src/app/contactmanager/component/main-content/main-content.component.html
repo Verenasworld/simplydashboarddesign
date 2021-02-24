@@ -1,22 +1,27 @@
+
 <div *ngIf="!user">
-  Please select a contact.
+  <mat-spinner color="accent"></mat-spinner>
 </div>
-<mat-spinner color="accent"></mat-spinner>
 <div *ngIf="user">
   <mat-card>
     <mat-card-header>
       <mat-icon mat-card-avatar svgIcon="{{user.avatar}}"></mat-icon>
-      <mat-card-title>
-        <h2>{{user.name}}</h2>
-      </mat-card-title>
-      <mat-card-subtitle>Birthday
-        {{user.birthDate | date: 'd LLLL'}}
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>
+        Birthday {{ user.birthDate | date: 'd LLLL'}}
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>
-     {{user.bio}}
-      </p>
+      <mat-tab-group>
+        <mat-tab label="Bio">
+          <p>
+          {{user.bio}}
+        </p> </mat-tab>
+        <mat-tab label="Notes"> Content 2 notes
+        </mat-tab>
+        <mat-tab label="Contact">office@office.net
+        </mat-tab>
+      </mat-tab-group>
     </mat-card-content>
 </mat-card>
 </div>
