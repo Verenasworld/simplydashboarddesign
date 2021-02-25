@@ -17,7 +17,8 @@
           <p>
           {{user.bio}}
         </p> </mat-tab>
-        <mat-tab label="Notes"> Content 2 notes
+        <mat-tab label="Notes">
+          <app-notes [notes]="user.notes"></app-notes>
         </mat-tab>
         <mat-tab label="Contact">
           <h2>office@office.net</h2>

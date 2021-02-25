@@ -14,6 +14,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {UserService} from './service/user.service';
 import {HttpClientModule} from '@angular/common/http';
+import { NotesComponent } from './component/notes/notes.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
     ContactmanagerAppComponent,
     ToolbarComponent,
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotesComponent
   ],
   imports:
     [
