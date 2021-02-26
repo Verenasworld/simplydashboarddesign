@@ -15,6 +15,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {UserService} from './service/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import { NotesComponent } from './component/notes/notes.component';
+import { NewContactDialogComponent } from './component/new-contact-dialog/new-contact-dialog.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,8 @@ const routes: Routes = [
     ToolbarComponent,
     MainContentComponent,
     SidenavComponent,
-    NotesComponent
+    NotesComponent,
+    NewContactDialogComponent
   ],
   imports:
     [
