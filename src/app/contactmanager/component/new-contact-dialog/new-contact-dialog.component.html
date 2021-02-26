@@ -13,22 +13,32 @@
      </mat-select>
    </mat-form-field>
    <br>
+
    <mat-form-field appearance="fill" color="accent">
    <mat-label>Name</mat-label>
-   <input matInput [(ngModel)]="user.name" required>
+   <input matInput [formControl]="name"  required>
+     <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
  </mat-form-field>
+   <br>
+   <mat-form-field appearance="fill" color="accent" [(ngModel)]="user.birthDate">
+     <mat-label>Birthday</mat-label>
+     <input matInput [matDatepicker]="picker">
+     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+     <mat-datepicker #picker></mat-datepicker>
+   </mat-form-field>
+   <br>
    <mat-form-field appearance="fill" color="accent">
      <mat-label>Bio</mat-label>
      <textarea matInput [(ngModel)]="user.bio"></textarea>
    </mat-form-field></div>
 </mat-dialog-content>
 <mat-dialog-actions>
-
+  <br>
   <button mat-flat-button color="accent" (click)="save()">
-    <mat-icon>save</mat-icon>Save
+    <mat-icon>save</mat-icon> Save
   </button>
   <button mat-flat-button color="accent" (click)="dismiss()">
-    <mat-icon>cancel</mat-icon>Cancel
+    <mat-icon>cancel</mat-icon> Cancel
   </button>
 </mat-dialog-actions>
 

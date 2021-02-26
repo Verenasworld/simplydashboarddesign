@@ -2,7 +2,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../share/material.module';
 
 
@@ -44,6 +44,7 @@ const routes: Routes = [
     CommonModule,
       MaterialModule,
       FlexLayoutModule,
+      ReactiveFormsModule,
       FormsModule,
       RouterModule.forChild(routes),
       HttpClientModule

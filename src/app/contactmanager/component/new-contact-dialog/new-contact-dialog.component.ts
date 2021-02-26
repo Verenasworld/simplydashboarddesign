@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {User} from '../../models/user';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-new-contact-dialog',
@@ -13,12 +14,18 @@ export class NewContactDialogComponent implements OnInit {
   ];
   user: User;
   constructor(private dialogRef: MatDialogRef<NewContactDialogComponent>) { }
+  name = new FormControl('', [Validators.required]);
+
+  getErrorMessage() {
+    return this.name.hasError('required') ? 'You must enter a name' : '';
+  }
 
   ngOnInit(): void {
     this.user = new User();
   }
   save(){
-  this.dialogRef.close(this.user);
+    this.user.name = this.name.value;
+    this.dialogRef.close(this.user);
 }
 
   dismiss(){
