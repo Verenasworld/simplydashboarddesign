@@ -1,20 +1,25 @@
 <h2 mat-dialog-title>Add a new contact here</h2>
 <mat-dialog-content>
  <div class="example-container">
-   <mat-form-field appearance="fill">
-   <mat-label>Input</mat-label>
-   <input matInput>
- </mat-form-field>
-   <mat-form-field appearance="fill">
-     <mat-label>Select</mat-label>
-     <mat-select>
-       <mat-option value="one">First option</mat-option>
-       <mat-option value="two">Second option</mat-option>
+   <mat-form-field appearance="fill" color="accent">
+     <mat-label>Avatar</mat-label>
+     <mat-select [(ngModel)]="user.avatar">
+       <mat-select-trigger>
+         <mat-icon svgIcon="{{user.avatar}}"></mat-icon> {{user.avatar}}
+       </mat-select-trigger>
+       <mat-option *ngFor="let avatar of avatars" [value]="avatar">
+         <mat-icon svgIcon="{{avatar}}"></mat-icon> {{avatar}}
+       </mat-option>
      </mat-select>
    </mat-form-field>
-   <mat-form-field appearance="fill">
-     <mat-label>Textarea</mat-label>
-     <textarea matInput></textarea>
+   <br>
+   <mat-form-field appearance="fill" color="accent">
+   <mat-label>Name</mat-label>
+   <input matInput [(ngModel)]="user.name" required>
+ </mat-form-field>
+   <mat-form-field appearance="fill" color="accent">
+     <mat-label>Bio</mat-label>
+     <textarea matInput [(ngModel)]="user.bio"></textarea>
    </mat-form-field></div>
 </mat-dialog-content>
 <mat-dialog-actions>
