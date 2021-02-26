@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-new-contact-dialog',
   templateUrl: './new-contact-dialog.component.html',
-  styleUrls: ['./new-contact-dialog.component.css']
+  styleUrls: ['./new-contact-dialog.component.scss']
 })
 export class NewContactDialogComponent implements OnInit {
 
@@ -11,5 +11,11 @@ export class NewContactDialogComponent implements OnInit {
 
   ngOnInit(): void {
   }
+save(){
+  console.log('save');
+}
 
+dismiss(){
+    console.log('dissmiss');
+}
 }
