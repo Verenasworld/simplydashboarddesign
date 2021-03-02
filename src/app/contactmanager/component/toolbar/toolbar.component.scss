@@ -1,7 +1,13 @@
-$iconWidth: 56px;
+$iconWidth: 50px;
+.example-spacer {
+  flex: 1 1 auto;
+}
+h1{
+  font-weight: lighter;
+  margin-top: 3px;
+}
 
 .sidenav-toggle{
-
   display: none;
   padding: 0;
   margin: 8px;

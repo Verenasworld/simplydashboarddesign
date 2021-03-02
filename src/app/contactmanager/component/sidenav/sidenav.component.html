@@ -4,7 +4,7 @@
                [opened]="!isScreenSmall"
                [mode]="isScreenSmall ? 'over' : 'side' " >
     <mat-toolbar color="accent">
-      Contacts
+      <h3>Person</h3>
     </mat-toolbar>
       <mat-nav-list>
         <mat-list-item *ngFor="let user of users | async">
