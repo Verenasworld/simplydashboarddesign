@@ -19,8 +19,8 @@ $candy-app-theme: mat-light-theme(
 @include angular-material-theme($candy-app-theme);
 
 .dark-theme{
-  $primary-dark: mat-palette($mat-amber, 700);
-  $accent-dark: mat-palette($mat-indigo);
+  $primary-dark: mat-palette($mat-blue, 700);
+  $accent-dark: mat-palette($mat-blue-grey);
   $warn-dark: mat-palette($mat-red);
 
   $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
