@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {User} from '../../models/user';
 import {FormControl, Validators} from '@angular/forms';
@@ -10,6 +10,7 @@ import {UserService} from '../../service/user.service';
   styleUrls: ['./new-contact-dialog.component.scss']
 })
 export class NewContactDialogComponent implements OnInit {
+  today = new Date();
   avatars = [
     'svg-1', 'svg-2', 'svg-3', 'svg-4', 'svg-5', 'svg-6'
   ];
