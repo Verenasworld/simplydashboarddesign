@@ -3,6 +3,8 @@ import {User} from '../models/user';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +20,15 @@ export class UserService {
 
   get users(): Observable<User[]>{
     return this.users_.asObservable();
+  }
+
+  addUser(user: User): Promise<User>{
+    return new Promise((resolver, reject) => {
+      user.id = this.dataStore.users.length + 1;
+      this.dataStore.users.push(user);
+      this.users_.next(Object.assign({}, this.dataStore).users);
+      resolver(user);
+    });
   }
   userById(id: number) {
     return this.dataStore.users.find(x => x.id == id);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
 import {User} from '../../models/user';
 import {FormControl, Validators} from '@angular/forms';
+import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'app-new-contact-dialog',
@@ -13,7 +14,9 @@ export class NewContactDialogComponent implements OnInit {
     'svg-1', 'svg-2', 'svg-3', 'svg-4', 'svg-5', 'svg-6'
   ];
   user: User;
-  constructor(private dialogRef: MatDialogRef<NewContactDialogComponent>) { }
+  constructor(
+    private dialogRef: MatDialogRef<NewContactDialogComponent>,
+    private userService: UserService) { }
   name = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
@@ -25,10 +28,12 @@ export class NewContactDialogComponent implements OnInit {
   }
   save(){
     this.user.name = this.name.value;
-    this.dialogRef.close(this.user);
-}
+    this.userService.addUser(this.user).then(user => {
+      this.dialogRef.close(user);
+    });
 
-  dismiss(){
+}
+dismiss(){
     this.dialogRef.close(null);
 }
 }
