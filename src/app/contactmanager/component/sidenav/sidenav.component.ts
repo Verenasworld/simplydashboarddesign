@@ -16,7 +16,9 @@ const SMALL_WIDTH_BREAKPOINT = 1200;
 export class SidenavComponent implements OnInit {
 public isScreenSmall: boolean;
 users: Observable<User[]>;
+
 isDarkTheme: boolean;
+dir = 'ltr';
 
 constructor(
     private breakpointObserver: BreakpointObserver,
@@ -27,6 +29,10 @@ constructor(
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDir(){
+  this.dir = this.dir == 'ltr' ? 'rtl' : 'ltr';
   }
 
   ngOnInit(): void {
