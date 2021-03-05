@@ -1,5 +1,5 @@
 Have a look at my Design 
-https://github.com/Verenasworld/simplydashboarddesign/settings
+https://verenasworld.github.io/simplydashboarddesign/
 
 
 # AngularMaterial
