@@ -1,6 +1,11 @@
 Have a look at my Design 
 https://verenasworld.github.io/simplydashboarddesign/
 
+styling a small dashboard with Angular Material with a Tutorial on Pluralsight
+https://app.pluralsight.com/library/courses/angular-material/table-of-contents
+
+
+
 
 # AngularMaterial
 
